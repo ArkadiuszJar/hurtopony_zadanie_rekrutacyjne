@@ -8,20 +8,20 @@ const TireResultsView = ({ replaceable, sizeToReplacementSizeOffset, notNullValu
             if (replaceable) {
                 return (
                     <ResultBannerInfo style="bg-green-300  border-green-600" key={'replaceable'}
-                                         src="../../../public/check.svg" alt="check icon"
+                                         src="../../../check.svg" alt="check icon"
                                          text={`Tire outer diameter difference (${sizeToReplacementSizeOffset}%) is within the range of +1.5% to -2%.`}/>
                 )
             } else {
                 return (
                     <ResultBannerInfo style="bg-red-300  border-red-600" key={'notReplaceable'}
-                                         src="../../../public/circleX.svg" alt="check icon"
+                                         src="../../../circleX.svg" alt="check icon"
                                          text={`The tire outer diameter difference (${sizeToReplacementSizeOffset}%) is not within the range of +1.5% to -2%.`}/>
                 )
             }
         } else {
             return (
                 <ResultBannerInfo style="bg-yellow-300  border-yellow-600" key={'noValues'}
-                                     src="../../../public/questionMark.svg" alt="question mark"
+                                     src="../../../questionMark.svg" alt="question mark"
                                      text='Please enter data to calculate the tire outer diameter difference.'/>
             )
         }
