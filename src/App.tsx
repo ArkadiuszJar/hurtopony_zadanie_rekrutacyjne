@@ -16,18 +16,13 @@ function App() {
     }
 
   return (
-    <>
      <main>
-         <div>
+         <div className='w-screen h-screen bg-[#232339] flex flex-col items-center justify-center'>
              <TireInfoInput title={"Size"} onDiameterChanged={handleDiameterChanged}/>
              <TireInfoInput title={"Replacement size"} onDiameterChanged={handleReplacementDiameterChanged}/>
-         </div>
-
-         <div>
              <TireResults diameter={diameter} replacementDiameter={replacementDiameter}/>
          </div>
      </main>
-    </>
   )
 }
 

@@ -8,3 +8,9 @@ export type TTireInfoInput = {
     diameterInMillimeters: number;
     onSubmit?: (e: FormEvent<HTMLFormElement> ) => void;
 }
+
+export type TFormInput = {
+    label: string;
+    name: string;
+    value: number | undefined;
+}
