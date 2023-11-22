@@ -15,9 +15,9 @@ const TireInfoInputView = ({ title, tireWidth, tireProfile, diameter, onSubmit, 
                     </button>
                 </form>
             </div>
-            <div className="flex flex-col h-full align-middle p-4 justify-end ml-4">
+            <div className="flex flex-col h-full align-middle p-2 justify-end ml-4 mt-10">
                 <p className='text-center font-bold'>Diameter (mm)</p>
-                <p className='border-b p-4 font-bold bg-transparent text-center border-[#ACB1C3] cursor-default'>{diameterInMillimeters?.toFixed(0)}</p>
+                <p className='border-b p-2 font-bold bg-transparent text-center border-[#ACB1C3] cursor-default'>{diameterInMillimeters?.toFixed(0)}</p>
             </div>
         </div>
     );
