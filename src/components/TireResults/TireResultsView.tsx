@@ -1,25 +1,17 @@
-import { motion } from "framer-motion";
+import {ResultBannerInfo} from "./ResultBannerInfo.tsx";
 
 const TireResultsView = ({ replaceable, sizeToReplacementSizeOffset, notNullValues }: { replaceable: boolean, sizeToReplacementSizeOffset: number, notNullValues: boolean }) => {
     return (
         <>
-            <div>
+            <div className='lg:w-1/2 p-4'>
                 {notNullValues ?
                     replaceable ?
-                        <motion.div key={'replaceable'} initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className='flex gap-6 mt-4 bg-green-300 bg-opacity-10 p-8 border-2 border-green-600 rounded-2xl'>
-                            <img className='scale-[2]' src="../../../public/check.svg" alt="check icon" />
-                            <p className='text-xl text-white'>Tire outer diameter difference ({sizeToReplacementSizeOffset}%) is within the range of +1.5% to -2%</p>
-                        </motion.div>
-                        :
-                        <motion.div key={'notReplaceable'} initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className='flex gap-6 mt-4 bg-red-300 bg-opacity-10 p-8 border-2 border-red-600 rounded-2xl'>
-                            <img className='scale-[2]' src="../../../public/circleX.svg" alt="check icon" />
-                            <p className=' text-xl text-white'>The tire outer diameter difference ({sizeToReplacementSizeOffset}%) is not within the range of +1.5% to -2%.</p>
-                        </motion.div>
+                        <ResultBannerInfo style="bg-green-300  border-green-600" key={'replaceable'} src="../../../public/check.svg" alt="check icon" text={`Tire outer diameter difference (${sizeToReplacementSizeOffset}%) is within the range of +1.5% to -2%.`} />
+
                     :
-                    <motion.div key={'noValues'} initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className='flex gap-6 mt-4 bg-yellow-300 bg-opacity-10 p-8 border-2 border-yellow-600 rounded-2xl'>
-                        <img className='scale-[2]' src="../../../public/questionMark.svg" alt="check icon" />
-                        <p className=' text-xl text-white'>Please enter data to calculate the tire outer diameter difference.</p>
-                    </motion.div>
+                        <ResultBannerInfo style="bg-red-300  border-red-600" key={'notReplaceable'} src="../../../public/circleX.svg" alt="check icon" text={`The tire outer diameter difference (${sizeToReplacementSizeOffset}%) is not within the range of +1.5% to -2%.`} />
+                    :
+                    <ResultBannerInfo style="bg-yellow-300  border-yellow-600" key={'noValues'} src="../../../public/questionMark.svg" alt="question mark" text='Please enter data to calculate the tire outer diameter difference.'/>
                 }
             </div>
             <div>

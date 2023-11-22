@@ -1,6 +1,7 @@
 import TireInfoInput from "./components/TireInfoInput";
 import {useState} from "react";
 import TireResults from "./components/TireResults";
+import BrandsBanner from "./components/BrandsBanner/BrandsBanner.tsx";
 
 function App() {
 
@@ -17,9 +18,10 @@ function App() {
 
   return (
      <main>
-         <div className='w-screen h-screen bg-[#232339] flex flex-col items-center justify-center'>
-             <TireInfoInput title={"Size"} onDiameterChanged={handleDiameterChanged}/>
-             <TireInfoInput title={"Replacement size"} onDiameterChanged={handleReplacementDiameterChanged}/>
+         <div className='w-screen min-h-screen bg-[#232339] flex flex-col items-center justify-center'>
+             <BrandsBanner/>
+             <TireInfoInput title={"Tire size"} onDiameterChanged={handleDiameterChanged}/>
+             <TireInfoInput title={"Replacement tire size"} onDiameterChanged={handleReplacementDiameterChanged}/>
              <TireResults diameter={diameter} replacementDiameter={replacementDiameter}/>
          </div>
      </main>
