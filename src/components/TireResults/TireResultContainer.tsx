@@ -10,9 +10,7 @@ const TireResultContainer = ({diameter, replacementDiameter}: TDiameter) => {
     const diameterOffset = calculateInverseRatioPercentage(replacementDiameter, diameter)
 
     return (
-        <>
-            <TireResultsView replaceable={replaceable} sizeToReplacementSizeOffset={diameterOffset} notNullValues={notNullValues}/>
-        </>
+        <TireResultsView replaceable={replaceable} sizeToReplacementSizeOffset={diameterOffset} notNullValues={notNullValues}/>
     )
 }
 

@@ -9,11 +9,11 @@ function App() {
     const [replacementDiameter, setReplacementDiameter] = useState<number>(0);
 
     const handleDiameterChanged = (diameter: number | undefined) => {
-        setDiameter(diameter || 0);
+        setDiameter(diameter ?? 0);
     }
 
     const handleReplacementDiameterChanged = (diameter: number | undefined) => {
-        setReplacementDiameter(diameter || 0);
+        setReplacementDiameter(diameter ?? 0);
     }
 
   return (
